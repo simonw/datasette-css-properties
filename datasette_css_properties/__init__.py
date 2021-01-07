@@ -4,7 +4,11 @@ from datasette.utils import escape_css_string, to_css_class
 
 
 def css_response(css):
-    return Response(css, content_type="text/css; charset=utf-8")
+    return Response(
+        css,
+        content_type="text/css; charset=utf-8",
+        headers={"X-Content-Type-Options": "nosniff"},
+    )
 
 
 def render_css(request, rows):

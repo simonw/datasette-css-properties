@@ -20,7 +20,7 @@ import urllib
         ("select 'hello' as foo", ["foo"], ":root {\n  --foo: hello;\n}"),
     ],
 )
-async def test_plugin_is_installed(query, raw, expected_css):
+async def test_css_output(query, raw, expected_css):
     datasette = Datasette([], memory=True)
     response = await datasette.client.get(
         "/:memory:.css?"
@@ -34,3 +34,4 @@ async def test_plugin_is_installed(query, raw, expected_css):
     )
     assert response.status_code == 200
     assert response.text == expected_css
+    assert response.headers["x-content-type-options"] == "nosniff"
