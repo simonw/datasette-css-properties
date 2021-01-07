@@ -7,6 +7,8 @@
 
 Extremely experimental Datasette output plugin using CSS properties, inspired by [Custom Properties as State](https://css-tricks.com/custom-properties-as-state/) by Chris Coyier.
 
+More about this project: [APIs from CSS without JavaScript: the datasette-css-properties plugin](https://simonwillison.net/2021/Jan/7/css-apis-no-javascript/)
+
 ## Installation
 
 Install this plugin in the same environment as Datasette.
