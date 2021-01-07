@@ -41,7 +41,7 @@ If you link this stylesheet to your page you can then do things like this;
 
 Values will be quoted as CSS strings by default. If you want to return a "raw" value without the quotes - for example to set a CSS property that is numeric or a color, you can specify that column name using the `?_raw=column-name` parameter. This can be passed multiple times.
 
-Consider this example query:
+Consider [this example query](https://latest-with-plugins.datasette.io/github?sql=select%0D%0A++%27%23%27+||+substr(sha%2C+0%2C+6)+as+[custom-bg]%0D%0Afrom%0D%0A++commits%0D%0Aorder+by%0D%0A++author_date+desc%0D%0Alimit%0D%0A++1%3B):
 
 ```sql
 select
@@ -54,19 +54,19 @@ limit
   1;
 ```
 
-This returns the first 6 characters of the most recently authored commit with a `#` prefix. The `.css` output rendered version looks like this:
+This returns the first 6 characters of the most recently authored commit with a `#` prefix. The `.css` [output rendered version](https://latest-with-plugins.datasette.io/github.css?sql=select%0D%0A++%27%23%27+||+substr(sha%2C+0%2C+6)+as+[custom-bg]%0D%0Afrom%0D%0A++commits%0D%0Aorder+by%0D%0A++author_date+desc%0D%0Alimit%0D%0A++1%3B) looks like this:
 
 ```css
 :root {
-  --custom-bg: '#e5930';
+  --custom-bg: '#97fb1';
 }
 ```
 
-Adding `?_raw=custom-bg` to the URL produces this instead:
+Adding `?_raw=custom-bg` to the URL produces [this instead](https://latest-with-plugins.datasette.io/github.css?sql=select%0D%0A++%27%23%27+||+substr(sha%2C+0%2C+6)+as+[custom-bg]%0D%0Afrom%0D%0A++commits%0D%0Aorder+by%0D%0A++author_date+desc%0D%0Alimit%0D%0A++1%3B&_raw=custom-bg):
 
 ```css
 :root {
-  --custom-bg: #e5930;
+  --custom-bg: #97fb1;
 }
 ```
 
