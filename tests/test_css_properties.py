@@ -30,7 +30,8 @@ async def test_css_output(query, raw, expected_css):
                 "_raw": raw,
             },
             doseq=True,
-        )
+        ),
+        follow_redirects=True,
     )
     assert response.status_code == 200
     assert response.text == expected_css
