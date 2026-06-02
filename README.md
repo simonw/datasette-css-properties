@@ -31,7 +31,7 @@ Example: https://latest-with-plugins.datasette.io/fixtures/roadside_attractions.
 }
 ```
 
-If you link this stylesheet to your page you can then do things like this;
+If you link this stylesheet to your page you can then do things like this:
 
 ```html
 <link rel="stylesheet" href="https://latest-with-plugins.datasette.io/fixtures/roadside_attractions.css">
